@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites Beyond - Mission-Ready Web Solutions</title>
+    <!-- chad's own draft (dark theme, blue accent) — for reviewing alternate section copy. Not part of the grayscale wireframe. -->
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #161D30;
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --accent: #3B82F6;
+            --accent-hover: #2563EB;
+            --border: #24304F;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            background-color: #1E293B;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        /* Timeline Flow */
+        .steps {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .step-num {
+            background-color: #1E293B;
+            border: 1px solid var(--border);
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">Websites <span>Beyond</span></div>
+        </header>
+
+        <!-- 1. AGENCY HERO MODULE -->
+        <section class="hero" style="padding: 120px 0 100px; max-width: 900px;">
+            <h3 style="color: var(--accent); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; font-weight: 700;">The Agency Partnership</h3>
+            <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 32px;">Eliminate the Technical Distractions. Elevate the Marketing Focus.</h1>
+            <p class="tagline" style="font-size: 1.5rem; max-width: 700px; margin: 0 auto 48px;">Partner with the engineers who actually understand marketing. You keep 100% of the strategy; we handle 100% of the web architecture.</p>
+            <div class="cta-group">
+                <a href="#discovery" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Schedule an Agency Review</a>
+            </div>
+        </section>
+
+        <!-- 2. INTRODUCTION / MISSION -->
+        <!-- Moved to Homepage -->
+
+        <!-- 2. MARKETER VALUE PROPS (The tactical tools) -->
+        <section class="section">
+            <h2 class="section-title">Software systems for marketing professionals</h2>
+            <p class="section-subtitle">Successful digital marketing starts with a strong technical foundation.</p>
+
+            <div class="steps" style="max-width: 800px; margin: 0 auto;">
+                <div class="card" style="margin-bottom: 24px; padding: 32px;">
+                    <h3 style="margin-bottom: 16px;">Autonomy</h3>
+                    <ul style="color: var(--text-secondary); list-style-position: inside; padding-left: 0; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">Edit content and manage copy without developer assistance.</li>
+                        <li style="margin-bottom: 8px;">Create new landing pages for specific marketing scenarios.</li>
+                        <li>Optimize keywords and meta descriptions instantly.</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-bottom: 24px; padding: 32px;">
+                    <h3 style="margin-bottom: 16px;">Efficiency</h3>
+                    <ul style="color: var(--text-secondary); list-style-position: inside; padding-left: 0; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">Automated injection of relevant coupons and testimonials based on campaign targeting.</li>
+                        <li style="margin-bottom: 8px;">Systematic classification of marketing scenarios to eliminate manual data entry.</li>
+                        <li>Fully managed technical backbone so your team can focus strictly on strategy.</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-bottom: 24px; padding: 32px;">
+                    <h3 style="margin-bottom: 16px;">Performance</h3>
+                    <ul style="color: var(--text-secondary); list-style-position: inside; padding-left: 0; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">Engineered specifically for maximum conversion rate optimization.</li>
+                        <li style="margin-bottom: 8px;">Proprietary theming mechanisms that allow for seamless A/B testing out-of-the-box.</li>
+                        <li>Lightning-fast web infrastructure to prevent bounced ad traffic.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. AGENCY BUSINESS VALUE PROPS (The operational/financial wins) -->
+        <section class="section" style="background-color: #0b111a; border-radius: 12px; margin-top: 20px; padding: 60px 40px; border: 1px dashed var(--accent);">
+            <h2 class="section-title">The technical backbone your agency has been missing</h2>
+            <p class="section-subtitle">How partnering with us improves your margins, retention, and scalability.</p>
+
+            <div class="grid">
+                <div class="card" style="background-color: var(--bg-main);">
+                    <h3>[ Agency Benefit 1 ]</h3>
+                    <p style="color: var(--text-secondary);">Placeholder text describing a financial, operational, or scalability benefit for the agency owner.</p>
+                </div>
+                <div class="card" style="background-color: var(--bg-main);">
+                    <h3>[ Agency Benefit 2 ]</h3>
+                    <p style="color: var(--text-secondary);">Placeholder text describing a financial, operational, or scalability benefit for the agency owner.</p>
+                </div>
+                <div class="card" style="background-color: var(--bg-main);">
+                    <h3>[ Agency Benefit 3 ]</h3>
+                    <p style="color: var(--text-secondary);">Placeholder text describing a financial, operational, or scalability benefit for the agency owner.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. INTEGRATION PROCESS (How to partner with us) -->
+        <section class="section">
+            <h2 class="section-title">[ Integration Process Placeholder ]</h2>
+            <p class="section-subtitle">How we plug into your agency's workflow and begin managing your client infrastructure.</p>
+
+            <div class="steps" style="max-width: 800px; margin: 0 auto;">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>[ Step 1 Heading ]</h3>
+                        <p style="color: var(--text-secondary);">Placeholder text describing the first step of the integration process.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>[ Step 2 Heading ]</h3>
+                        <p style="color: var(--text-secondary);">Placeholder text describing the second step of the integration process.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>[ Step 3 Heading ]</h3>
+                        <p style="color: var(--text-secondary);">Placeholder text describing the third step of the integration process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. THE STRUCTURAL CORE (Web Architecture) -->
+        <!-- Moved to Homepage -->
+
+        <!-- 5. WHAT WE BUILD (MISSION CONTROL + SITES/APPS) -->
+        <!-- Moved to Homepage -->
+
+        <!-- 5. THE ROUTER (FORKING PATHS) -->
+        <!-- Moved up to Section 3 -->
+
+        <!-- 6. FINAL CTA -->
+        <section class="section" style="text-align: center; border-bottom: none; padding-top: 40px;">
+            <h2 class="section-title" style="font-size: 3rem; margin-bottom: 16px;">Fuel Your Mission</h2>
+            <p class="section-subtitle" style="margin-bottom: 32px;">Ready to take flight? Schedule a free discovery call with a solutions architect today. Let's build something impactful together.</p>
+            <div class="cta-group">
+                <a href="#discovery" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Schedule Discovery Call</a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; Websites Beyond LLC — Mission-Ready Web Solutions
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites Beyond - Mission-Ready Web Solutions</title>
+    <!-- chad's own draft (dark theme, blue accent) — for reviewing alternate section copy. Not part of the grayscale wireframe. -->
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #161D30;
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --accent: #3B82F6;
+            --accent-hover: #2563EB;
+            --border: #24304F;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            background-color: #1E293B;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+        }
+
+        /* Timeline Flow */
+        .steps {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .step-num {
+            background-color: #1E293B;
+            border: 1px solid var(--border);
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">Websites <span>Beyond</span></div>
+        </header>
+
+        <!-- 1. HERO MODULE -->
+        <section class="hero">
+            <h1>Mission-Ready Web Solutions</h1>
+            <p class="tagline">World-class web architecture powering successful local marketing systems.</p>
+            <div class="cta-group">
+                <a href="agencies-draft.html" class="btn btn-primary">For Digital Agencies</a>
+                <a href="businesses-draft.html" class="btn">For Local Service Companies</a>
+            </div>
+        </section>
+
+        <!-- 2. INTRODUCTION / MISSION -->
+        <section class="section" style="max-width: 800px; margin: 0 auto; text-align: center; border-bottom: none; padding-bottom: 60px;">
+            <h2 class="section-title">Welcome to Websites Beyond</h2>
+            
+            <div style="color: var(--text-secondary); font-size: 1.25rem; line-height: 1.8; font-weight: 400; margin-top: 24px;">
+                <p>At our core, our mission is to elevate the people who keep our communities running. We believe that ambition is the heartbeat of progress - the drive that pushes teams to build something meaningful and leave a lasting impact. Web Technology shouldn't be a hurdle in that pursuit, it should be the catalyst. Just remember to buckle in.</p>
+            </div>
+        </section>
+
+        <!-- 3. THE MARKETING ENABLER SECTION -->
+        <section class="section">
+            <h2 class="section-title">Software systems for marketing professionals</h2>
+            <p class="section-subtitle">Successful digital marketing starts with a strong technical foundation.</p>
+
+            <div class="steps" style="max-width: 800px; margin: 0 auto;">
+                <div class="card" style="margin-bottom: 24px; padding: 32px;">
+                    <h3 style="margin-bottom: 16px;">Autonomy</h3>
+                    <ul style="color: var(--text-secondary); list-style-position: inside; padding-left: 0; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">Edit content and manage copy without developer assistance.</li>
+                        <li style="margin-bottom: 8px;">Create new landing pages for specific marketing scenarios.</li>
+                        <li>Optimize keywords and meta descriptions instantly.</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-bottom: 24px; padding: 32px;">
+                    <h3 style="margin-bottom: 16px;">Efficiency</h3>
+                    <ul style="color: var(--text-secondary); list-style-position: inside; padding-left: 0; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">Automated injection of relevant coupons and testimonials based on campaign targeting.</li>
+                        <li style="margin-bottom: 8px;">Systematic classification of marketing scenarios to eliminate manual data entry.</li>
+                        <li>Fully managed technical backbone so your team can focus strictly on strategy.</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-bottom: 24px; padding: 32px;">
+                    <h3 style="margin-bottom: 16px;">Performance</h3>
+                    <ul style="color: var(--text-secondary); list-style-position: inside; padding-left: 0; line-height: 1.6;">
+                        <li style="margin-bottom: 8px;">Engineered specifically for maximum conversion rate optimization.</li>
+                        <li style="margin-bottom: 8px;">Proprietary theming mechanisms that allow for seamless A/B testing out-of-the-box.</li>
+                        <li>Lightning-fast web infrastructure to prevent bounced ad traffic.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FORKING CTA MOVED UP HERE -->
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 1.1rem;">Choose your workspace to see how our systems plug into your specific operation:</p>
+                <div class="cta-group">
+                    <a href="agencies-draft.html" class="btn btn-primary">For Digital Agencies</a>
+                    <a href="businesses-draft.html" class="btn">For Local Service Companies</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. THE STRUCTURAL CORE (Web Architecture) -->
+        <section class="section">
+            <h2 class="section-title">Our Structural Core</h2>
+            <p class="section-subtitle">Web architecture is the foundation of your digital presence. We engineer the frameworks that ensure your systems remain secure, fast, and stable as you grow.</p>
+
+            <div class="grid">
+                <div class="card" style="text-align: center;">
+                    <h3 style="margin-bottom: 0;">Designed to Evolve</h3>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="margin-bottom: 0;">Engineered to Endure</h3>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3 style="margin-bottom: 0;">Constructed to Last</h3>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#architecture" class="btn" style="background-color: transparent; border: 1px solid var(--border);">Explore Our Technical Architecture</a>
+            </div>
+        </section>
+
+        <!-- 5. WHAT WE BUILD (MISSION CONTROL + SITES/APPS) -->
+        <section class="section">
+            <h2 class="section-title">Web Systems That Scale</h2>
+            <p class="section-subtitle">The foundation and the build. We provide everything required to launch and manage a high-performance digital presence.</p>
+
+            <div class="card" style="margin-bottom: 24px; border-color: var(--accent); background-color: #111827;">
+                <h3 style="color: var(--accent); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">The Core Foundation</h3>
+                <h3 style="font-size: 1.75rem; margin-bottom: 12px;">Mission Control</h3>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6;">The fully managed command center behind your marketing team. More than secure servers and proactive maintenance, Mission Control gives you a dedicated engineering partner. We secure the infrastructure and manage the systems, so your marketing team can focus 100% on growth.</p>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="card">
+                    <h3 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 8px;">What We Build</h3>
+                    <h3>Websites That Convert</h3>
+                    <p style="color: var(--text-secondary);">We engineer modern, lightning-fast marketing websites built specifically to turn local traffic into phone calls, integrated natively with your tracking pixels and analytics.</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 8px;">What We Build</h3>
+                    <h3>Web Apps That Empower</h3>
+                    <p style="color: var(--text-secondary);">Beyond standard websites, we build the complex logic your business needs to operate. From custom quoting calculators to direct API integrations with ServiceTitan, Housecall Pro, and HubSpot.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. THE ROUTER (FORKING PATHS) -->
+        <!-- Moved up to Section 3 -->
+
+        <!-- 6. FINAL CTA -->
+        <section class="section" style="text-align: center; border-bottom: none; padding-top: 40px;">
+            <h2 class="section-title" style="font-size: 3rem; margin-bottom: 16px;">Fuel Your Mission</h2>
+            <p class="section-subtitle" style="margin-bottom: 32px;">Ready to take flight? Schedule a free discovery call with a solutions architect today. Let's build something impactful together.</p>
+            <div class="cta-group">
+                <a href="#discovery" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Schedule Discovery Call</a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; Websites Beyond LLC — Mission-Ready Web Solutions
+        </footer>
+    </div>
+
+</body>
+</html>
