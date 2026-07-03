@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Architecture - Websites Beyond</title>
+    <style>
+        :root {
+            --bg-main: #0B0F19;
+            --bg-card: #161D30;
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --accent: #3B82F6;
+            --accent-hover: #2563EB;
+            --border: #24304F;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 0 20px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 0; }
+
+        header {
+            padding: 20px 0; border-bottom: 1px solid var(--border); display: flex;
+            justify-content: space-between; align-items: center; margin-bottom: 60px;
+        }
+        .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.025em; text-decoration: none; color: white; }
+        .logo span { color: var(--accent); }
+
+        .hero { text-align: center; padding: 60px 0 80px; max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px; }
+        .tagline { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 40px; font-weight: 400; line-height: 1.6; }
+
+        .section { padding: 80px 0; border-bottom: 1px dashed var(--border); }
+        .section:last-child { border-bottom: none; }
+        
+        /* The new alternating split component */
+        .split { display: flex; gap: 60px; align-items: center; }
+        .split-text { flex: 1; }
+        .split-img { flex: 1; }
+        
+        .split-reverse { flex-direction: row-reverse; }
+
+        @media (max-width: 768px) {
+            .split, .split-reverse { flex-direction: column; gap: 40px; }
+        }
+
+        .split h2 { font-size: 2.5rem; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .split p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 24px; }
+        
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { 
+            position: relative; 
+            padding-left: 24px; 
+            margin-bottom: 16px; 
+            color: var(--text-primary); 
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+        .feature-list li::before {
+            content: "→";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .feature-list li span {
+            display: block;
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .img-placeholder {
+            background-color: var(--bg-card);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .cta-group { display: flex; gap: 16px; justify-content: center; margin-top: 40px; }
+        .btn { display: inline-block; background-color: var(--bg-card); color: var(--text-primary); padding: 14px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; border: 1px solid var(--border); transition: all 0.2s ease; }
+        .btn-primary { background-color: var(--accent); border-color: var(--accent); }
+        .btn-primary:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+
+        footer { text-align: center; padding: 40px 0; color: var(--text-secondary); font-size: 0.875rem; margin-top: 60px; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="chad-draft.html" class="logo">Websites <span>Beyond</span></a>
+            <a href="chad-draft.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;">&larr; Back to Homepage</a>
+        </header>
+
+        <!-- HERO -->
+        <section class="hero">
+            <h3 style="color: var(--accent); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; font-weight: 700;">Technical Specs</h3>
+            <h1>World-Class Architecture</h1>
+            <p class="tagline">Explore the enterprise-grade foundation that ensures your marketing systems remain secure, fast, and scalable as you grow.</p>
+        </section>
+
+        <!-- 1. INFRASTRUCTURE (Text Left, Image Right) -->
+        <section class="section">
+            <div class="split">
+                <div class="split-text">
+                    <h3 style="color: var(--accent); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Pillar 01</h3>
+                    <h2>Infrastructure</h2>
+                    <p>Built for absolute resilience. We construct hosting environments designed to absorb massive traffic spikes while maintaining perfect operational stability.</p>
+                    <ul class="feature-list">
+                        <li>Dedicated & Redundant Resources <span>Isolated environments so your site's performance is never affected by noisy neighbors.</span></li>
+                        <li>99.99% Uptime Guarantee <span>Engineered to stay online and active through heavy ad runs and seasonal peaks.</span></li>
+                        <li>Hourly Backups <span>Automatic, off-site redundancy ensuring you never lose critical business data.</span></li>
+                        <li>Content Delivery Network (CDN) <span>Global edge caching to serve your site instantly from the server closest to your user.</span></li>
+                    </ul>
+                </div>
+                <div class="split-img">
+                    <div class="img-placeholder">[ Architecture / Server Diagram Placeholder ]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SECURITY (Image Left, Text Right) -->
+        <section class="section">
+            <div class="split split-reverse">
+                <div class="split-text">
+                    <h3 style="color: var(--accent); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Pillar 02</h3>
+                    <h2>Security</h2>
+                    <p>Enterprise-grade defense mechanisms built natively into your foundation to protect your brand and secure your customer data.</p>
+                    <ul class="feature-list">
+                        <li>Web Application Firewall (WAF) <span>Proactive threat blocking that stops malicious traffic before it ever reaches your application.</span></li>
+                        <li>Continuous Malware Scanning <span>Automated, 24/7 monitoring to instantly detect and neutralize vulnerabilities.</span></li>
+                        <li>SSL & DDoS Protection <span>Encrypted connections and aggressive filtering to mitigate distributed denial-of-service attacks.</span></li>
+                        <li>Data Privacy Compliance <span>Architected to support strict regulatory requirements including GDPR and CCPA standards.</span></li>
+                    </ul>
+                </div>
+                <div class="split-img">
+                    <div class="img-placeholder">[ Security / Shield Visualization Placeholder ]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CONVERSION (Text Left, Image Right) -->
+        <section class="section">
+            <div class="split">
+                <div class="split-text">
+                    <h3 style="color: var(--accent); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Pillar 03</h3>
+                    <h2>Conversion</h2>
+                    <p>Performance directly drives revenue. We engineer the front-end experience explicitly to turn local search traffic into booked jobs.</p>
+                    <ul class="feature-list">
+                        <li>Core Web Vitals (Speed) <span>Sub-second load times engineered to eliminate bounce rates and satisfy Google's strictest algorithms.</span></li>
+                        <li>CRO-Optimized UX <span>Frictionless user interfaces modeled around proven local service conversion funnels.</span></li>
+                        <li>A/B Test Ready <span>Proprietary theming architecture that allows for instant experimentation and layout swapping.</span></li>
+                        <li>Analytics & Pixel Tracking <span>Clean, pre-configured pipelines to route data accurately to Google, Meta, and your CRM.</span></li>
+                    </ul>
+                </div>
+                <div class="split-img">
+                    <div class="img-placeholder">[ Conversion / Analytics Dashboard Placeholder ]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ACCESSIBILITY (Image Left, Text Right) -->
+        <section class="section">
+            <div class="split split-reverse">
+                <div class="split-text">
+                    <h3 style="color: var(--accent); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Pillar 04</h3>
+                    <h2>Accessibility</h2>
+                    <p>A mission-ready website must serve every member of your community. We build universally accessible, robust frameworks.</p>
+                    <ul class="feature-list">
+                        <li>Cross-Device Responsiveness <span>Flawless execution on every screen size, prioritizing the mobile-first local search experience.</span></li>
+                        <li>WCAG 2.2 Compliance <span>Engineered for inclusivity, supporting screen readers, blind accessibility, and keyboard navigation.</span></li>
+                        <li>Semantic HTML5 Structure <span>Clean, logical markup that provides structural clarity to both assistive technologies and search bots.</span></li>
+                    </ul>
+                </div>
+                <div class="split-img">
+                    <div class="img-placeholder">[ Accessibility / Multi-Device Render Placeholder ]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SEARCH (Text Left, Image Right) -->
+        <section class="section">
+            <div class="split">
+                <div class="split-text">
+                    <h3 style="color: var(--accent); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Pillar 05</h3>
+                    <h2>Search</h2>
+                    <p>Visibility requires a structural hierarchy. We bake elite technical SEO best practices directly into the codebase.</p>
+                    <ul class="feature-list">
+                        <li>Semantic & Schema Hierarchy <span>Automated schema markup to clearly signal your service relevance to search engines.</span></li>
+                        <li>E-E-A-T Architecture <span>Frameworks designed to showcase Experience, Expertise, Authoritativeness, and Trustworthiness.</span></li>
+                        <li>Geo-Targeted Local Templates <span>Dynamic routing and localized structural content built specifically to capture targeted area traffic.</span></li>
+                    </ul>
+                </div>
+                <div class="split-img">
+                    <div class="img-placeholder">[ SEO / Search Hierarchy Map Placeholder ]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section" style="text-align: center; border-bottom: none; padding-top: 40px;">
+            <h2 style="font-size: 3rem; margin-bottom: 16px;">Ready to Upgrade Your Engine?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.25rem; margin-bottom: 32px;">Schedule a technical review to see how our architecture can scale your operation.</p>
+            <div class="cta-group">
+                <a href="#discovery" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">Schedule Discovery Call</a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; Websites Beyond LLC — Mission-Ready Web Solutions
+        </footer>
+    </div>
+
+</body>
+</html>
