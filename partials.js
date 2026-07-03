@@ -17,9 +17,9 @@ const HEADER = `
     </div>
     <el-popover-group class="hidden lg:flex lg:gap-x-10 items-center">
       <a href="mission.html" class="text-sm/6 font-semibold text-gray-900">Mission</a>
-      <a href="solutions.html" class="text-sm/6 font-semibold text-gray-900">Services</a>
+      <a href="web-architecture.html" class="text-sm/6 font-semibold text-gray-900">Services</a>
       <a href="impact.html" class="text-sm/6 font-semibold text-gray-900">Projects</a>
-      <a href="partners.html" class="text-sm/6 font-semibold text-gray-900">Partners</a>
+      <a href="digital-agencies.html" class="text-sm/6 font-semibold text-gray-900">Partners</a>
       <a href="resources.html" class="text-sm/6 font-semibold text-gray-900">Resources</a>
     </el-popover-group>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-4">
@@ -38,9 +38,9 @@ const HEADER = `
           <div class="mt-6 -my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6 text-base/7 font-semibold">
               <a href="mission.html" class="-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50">Mission</a>
-              <a href="solutions.html" class="-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50">Services</a>
+              <a href="web-architecture.html" class="-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50">Services</a>
               <a href="impact.html" class="-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50">Projects</a>
-              <a href="partners.html" class="-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50">Partners</a>
+              <a href="digital-agencies.html" class="-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50">Partners</a>
               <a href="resources.html" class="-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50">Resources</a>
             </div>
             <div class="py-6 space-y-2">
