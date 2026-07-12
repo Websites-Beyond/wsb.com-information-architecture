@@ -1,0 +1,66 @@
+---
+import { navLinks } from '../data/nav';
+import ThemeToggle from './ThemeToggle.astro';
+
+const currentPath = Astro.url.pathname;
+const isActive = (href?: string) =>
+  href && (href === '/' ? currentPath === '/' : currentPath.startsWith(href));
+---
+<header class="border-b border-current">
+  <div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between gap-4">
+    <a href="/" class="font-bold">Websites Beyond</a>
+
+    <nav class="flex items-center gap-6">
+      {navLinks.map((link) =>
+        link.children ? (
+          <details class="group relative">
+            <summary class="text-sm cursor-pointer list-none opacity-70 hover:opacity-100 marker:hidden">
+              {link.label} <span aria-hidden="true">▾</span>
+            </summary>
+            <ul class="absolute left-0 mt-2 min-w-max border border-current bg-white dark:bg-black p-2 z-10">
+              {link.children.map((child) => (
+                <li>
+                  <a
+                    href={child.href}
+                    class:list={[
+                      'block px-2 py-1 text-sm',
+                      isActive(child.href) ? 'underline underline-offset-4' : 'opacity-70 hover:opacity-100',
+                    ]}
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : (
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm',
+              isActive(link.href) ? 'underline underline-offset-4' : 'opacity-70 hover:opacity-100',
+            ]}
+          >
+            {link.label}
+          </a>
+        )
+      )}
+    </nav>
+
+    <ThemeToggle />
+  </div>
+</header>
+
+<script>
+  // Close any open dropdown when clicking outside or pressing Escape.
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('header details[open]').forEach((d) => {
+      if (!d.contains(e.target as Node)) d.removeAttribute('open');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('header details[open]').forEach((d) => d.removeAttribute('open'));
+    }
+  });
+</script>

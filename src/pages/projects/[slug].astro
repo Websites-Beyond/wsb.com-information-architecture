@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Section from '../../components/Section.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('projects');
+  return items.map((item) => ({ params: { slug: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+<BaseLayout title={`${item.data.title} — Projects`}>
+  <Section first={true}>
+    <a href="/projects" class="text-sm underline underline-offset-4 opacity-70">← Projects</a>
+    <h1 class="text-4xl font-bold mt-4 mb-4">{item.data.title}</h1>
+    <div class="prose-wireframe max-w-prose opacity-80">
+      <Content />
+    </div>
+  </Section>
+</BaseLayout>

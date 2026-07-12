@@ -1,0 +1,20 @@
+---
+// A minimal outlined card for wireframing card grids.
+// `feature` = a prominent full-width card (bigger padding + heading).
+// `titleHtml` renders a raw-HTML title (e.g. <s>strikethrough</s>); it wins over `title`.
+interface Props {
+  title?: string;
+  titleHtml?: string;
+  feature?: boolean;
+}
+const { title, titleHtml, feature = false } = Astro.props;
+const headingClass = ['font-bold mb-2', feature ? 'text-2xl sm:text-3xl' : ''];
+---
+<div class:list={['border border-current', feature ? 'p-8 sm:p-10' : 'p-6']}>
+  {titleHtml ? (
+    <h3 class:list={headingClass} set:html={titleHtml} />
+  ) : title ? (
+    <h3 class:list={headingClass}>{title}</h3>
+  ) : null}
+  <slot />
+</div>

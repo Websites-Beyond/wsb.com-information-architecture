@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Section from './Section.astro';
+import Card from './Card.astro';
+
+interface Props {
+  collection: 'projects' | 'resources';
+  title: string;
+  basePath: string; // e.g. "/projects"
+  intro?: string;
+}
+const { collection, title, basePath, intro } = Astro.props;
+
+const items = (await getCollection(collection)).sort((a, b) => a.data.order - b.data.order);
+---
+<Section first={true}>
+  <h1 class="text-4xl font-bold mb-4">{title}</h1>
+  {intro && <p class="opacity-70 max-w-prose">{intro}</p>}
+</Section>
+
+<Section>
+  {items.length === 0 ? (
+    <p class="opacity-60">No {collection} yet — we'll add them one at a time.</p>
+  ) : (
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((item) => (
+        <Card title={item.data.title}>
+          {item.data.summary && <p class="opacity-70 text-sm mb-2">{item.data.summary}</p>}
+          <a href={`${basePath}/${item.id}`} class="text-sm underline underline-offset-4">
+            View →
+          </a>
+        </Card>
+      ))}
+    </div>
+  )}
+</Section>

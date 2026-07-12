@@ -1,0 +1,111 @@
+---
+import { getCollection, render } from 'astro:content';
+import Section from './Section.astro';
+import Card from './Card.astro';
+
+interface Props {
+  page: string; // matches the `page` frontmatter field
+}
+const { page } = Astro.props;
+
+const entries = (await getCollection('sections', (e) => e.data.page === page)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+// Pre-render each markdown body to a component we can drop in.
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content }))
+);
+
+const gridCols: Record<number, string> = {
+  1: 'sm:grid-cols-1',
+  2: 'sm:grid-cols-2',
+  3: 'sm:grid-cols-3',
+  4: 'sm:grid-cols-2 lg:grid-cols-4',
+};
+---
+{rendered.map(({ entry, Content }, i) => {
+  const d = entry.data;
+  return (
+    <Section
+      heading={d.hero ? undefined : d.heading}
+      headingHtml={d.hero ? undefined : d.headingHtml}
+      first={i === 0}
+      centered={!d.left}
+    >
+      {d.kicker && <p class="text-sm uppercase tracking-wide opacity-60 mb-2">{d.kicker}</p>}
+
+      {d.hero && d.headingHtml && (
+        <h1 class="text-5xl sm:text-6xl font-bold mb-4" set:html={d.headingHtml} />
+      )}
+      {d.hero && !d.headingHtml && d.heading && (
+        <h1 class="text-5xl sm:text-6xl font-bold mb-4">{d.heading}</h1>
+      )}
+      {d.subheading && (
+        <p class="text-2xl sm:text-3xl opacity-70 max-w-prose mx-auto mb-4">{d.subheading}</p>
+      )}
+
+      <div class:list={['prose-wireframe opacity-80 text-lg', !d.left && 'max-w-prose mx-auto']}>
+        <Content />
+      </div>
+
+      {d.bullets && (
+        <ul class="list-disc pl-6 space-y-1 opacity-80 mt-4 inline-block text-left text-lg">
+          {d.bullets.map((b) => <li>{b}</li>)}
+        </ul>
+      )}
+
+      {d.groups && (
+        <div class="grid gap-8 mt-8 text-left sm:grid-cols-2 lg:grid-cols-3">
+          {d.groups.map((g) => (
+            <div>
+              <h3 class="font-bold mb-3 pb-2 border-b border-current">{g.label}</h3>
+              <ul class="list-disc pl-5 space-y-1 opacity-80">
+                {g.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {d.steps && (
+        <ol class="mt-10 text-left max-w-3xl mx-auto space-y-10">
+          {d.steps.map((step, si) => (
+            <li class="flex gap-6">
+              <span class="text-3xl sm:text-4xl font-bold tabular-nums opacity-40 shrink-0">
+                {String(d.stepsCountdown ? d.steps.length - si : si + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-bold mb-2">{step.heading}</h3>
+                {step.body && <p class="opacity-80 text-lg">{step.body}</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      )}
+
+      {d.cards && (
+        <div class:list={['grid gap-4 mt-6', gridCols[d.columns] ?? gridCols[3]]}>
+          {d.cards.map((c) => (
+            <Card title={c.title} titleHtml={c.titleHtml} feature={d.columns === 1}>
+              {c.body && <p class:list={['opacity-70', d.columns === 1 ? 'text-lg' : 'text-sm']}>{c.body}</p>}
+              {c.href && <a href={c.href} class="text-sm underline underline-offset-4 mt-2 inline-block">View</a>}
+            </Card>
+          ))}
+        </div>
+      )}
+
+      {d.buttons && (
+        <div class="flex flex-wrap justify-center gap-4 mt-6">
+          {d.buttons.map((btn) =>
+            btn.style === 'secondary' ? (
+              <a href={btn.href} class="border border-current px-4 py-2">{btn.label}</a>
+            ) : (
+              <a href={btn.href} class="border border-current bg-black text-white dark:bg-white dark:text-black px-4 py-2">{btn.label}</a>
+            )
+          )}
+        </div>
+      )}
+    </Section>
+  );
+})}
