@@ -2,12 +2,13 @@
 // Site-wide closing CTA. Single source of truth — drop <FuelYourMission />
 // at the bottom of any page. Edit the copy here and it updates everywhere.
 import Section from './Section.astro';
+import { url } from '../lib/url';
 ---
 <Section heading="Fuel Your Mission" centered={true}>
   <p class="text-lg opacity-80">Schedule a free discovery call with a solutions architect today.</p>
   <p class="text-lg opacity-80 mt-4">Let's build something impactful together.</p>
   <div class="flex flex-wrap justify-center gap-4 mt-6">
-    <a href="/connect" class="border border-current bg-black text-white dark:bg-white dark:text-black px-4 py-2">
+    <a href={url('/connect')} class="border border-current bg-black text-white dark:bg-white dark:text-black px-4 py-2">
       Schedule Discovery Call
     </a>
   </div>

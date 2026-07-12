@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Section from '../../components/Section.astro';
+import { url } from '../../lib/url';
 
 export async function getStaticPaths() {
   const items = await getCollection('resources');
@@ -13,7 +14,7 @@ const { Content } = await render(item);
 ---
 <BaseLayout title={`${item.data.title} — Resources`}>
   <Section first={true}>
-    <a href="/resources" class="text-sm underline underline-offset-4 opacity-70">← Resources</a>
+    <a href={url('/resources')} class="text-sm underline underline-offset-4 opacity-70">← Resources</a>
     <h1 class="text-4xl font-bold mt-4 mb-4">{item.data.title}</h1>
     <div class="prose-wireframe max-w-prose opacity-80">
       <Content />

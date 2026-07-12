@@ -1,12 +1,13 @@
 ---
 import { navLinks } from '../data/nav';
+import { url } from '../lib/url';
 ---
 <footer class="border-t border-current mt-16">
   <div class="mx-auto max-w-4xl px-4 py-8 flex flex-wrap items-center justify-between gap-4 text-sm">
     <span class="opacity-70">Websites Beyond — wireframe</span>
     <nav class="flex flex-wrap gap-6">
-      {navLinks.map((link) => (
-        <a href={link.href} class="opacity-70 hover:opacity-100">{link.label}</a>
+      {navLinks.filter((link) => link.href).map((link) => (
+        <a href={url(link.href!)} class="opacity-70 hover:opacity-100">{link.label}</a>
       ))}
     </nav>
   </div>

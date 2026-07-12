@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Section from './Section.astro';
 import Card from './Card.astro';
+import { url } from '../lib/url';
 
 interface Props {
   collection: 'projects' | 'resources';
@@ -26,7 +27,7 @@ const items = (await getCollection(collection)).sort((a, b) => a.data.order - b.
       {items.map((item) => (
         <Card title={item.data.title}>
           {item.data.summary && <p class="opacity-70 text-sm mb-2">{item.data.summary}</p>}
-          <a href={`${basePath}/${item.id}`} class="text-sm underline underline-offset-4">
+          <a href={url(`${basePath}/${item.id}`)} class="text-sm underline underline-offset-4">
             View →
           </a>
         </Card>

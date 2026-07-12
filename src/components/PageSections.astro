@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Section from './Section.astro';
 import Card from './Card.astro';
+import { url } from '../lib/url';
 
 interface Props {
   page: string; // matches the `page` frontmatter field
@@ -89,7 +90,7 @@ const gridCols: Record<number, string> = {
           {d.cards.map((c) => (
             <Card title={c.title} titleHtml={c.titleHtml} feature={d.columns === 1}>
               {c.body && <p class:list={['opacity-70', d.columns === 1 ? 'text-lg' : 'text-sm']}>{c.body}</p>}
-              {c.href && <a href={c.href} class="text-sm underline underline-offset-4 mt-2 inline-block">View</a>}
+              {c.href && <a href={url(c.href)} class="text-sm underline underline-offset-4 mt-2 inline-block">View</a>}
             </Card>
           ))}
         </div>
@@ -99,9 +100,9 @@ const gridCols: Record<number, string> = {
         <div class="flex flex-wrap justify-center gap-4 mt-6">
           {d.buttons.map((btn) =>
             btn.style === 'secondary' ? (
-              <a href={btn.href} class="border border-current px-4 py-2">{btn.label}</a>
+              <a href={url(btn.href)} class="border border-current px-4 py-2">{btn.label}</a>
             ) : (
-              <a href={btn.href} class="border border-current bg-black text-white dark:bg-white dark:text-black px-4 py-2">{btn.label}</a>
+              <a href={url(btn.href)} class="border border-current bg-black text-white dark:bg-white dark:text-black px-4 py-2">{btn.label}</a>
             )
           )}
         </div>

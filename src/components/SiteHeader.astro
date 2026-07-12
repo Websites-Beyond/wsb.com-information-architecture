@@ -1,14 +1,18 @@
 ---
 import { navLinks } from '../data/nav';
 import ThemeToggle from './ThemeToggle.astro';
+import { url } from '../lib/url';
 
-const currentPath = Astro.url.pathname;
-const isActive = (href?: string) =>
-  href && (href === '/' ? currentPath === '/' : currentPath.startsWith(href));
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const isActive = (href?: string) => {
+  if (!href) return false;
+  const target = url(href).replace(/\/$/, '');
+  return href === '/' ? currentPath === target : currentPath.startsWith(target);
+};
 ---
 <header class="border-b border-current">
   <div class="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between gap-4">
-    <a href="/" class="font-bold">Websites Beyond</a>
+    <a href={url('/')} class="font-bold">Websites Beyond</a>
 
     <nav class="flex items-center gap-6">
       {navLinks.map((link) =>
@@ -21,7 +25,7 @@ const isActive = (href?: string) =>
               {link.children.map((child) => (
                 <li>
                   <a
-                    href={child.href}
+                    href={url(child.href)}
                     class:list={[
                       'block px-2 py-1 text-sm',
                       isActive(child.href) ? 'underline underline-offset-4' : 'opacity-70 hover:opacity-100',
@@ -35,7 +39,7 @@ const isActive = (href?: string) =>
           </details>
         ) : (
           <a
-            href={link.href}
+            href={url(link.href)}
             class:list={[
               'text-sm',
               isActive(link.href) ? 'underline underline-offset-4' : 'opacity-70 hover:opacity-100',
