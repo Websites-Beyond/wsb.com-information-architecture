@@ -13,7 +13,7 @@ export const navLinks: NavLink[] = [
   {
     label: 'Solutions',
     children: [
-      { label: 'Local Service Companies', href: '/solutions/local-service-companies' },
+      { label: 'Local Service Providers', href: '/solutions/local-service-providers' },
       { label: 'Digital Agencies', href: '/solutions/digital-agencies' },
     ],
   },

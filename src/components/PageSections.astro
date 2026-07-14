@@ -57,7 +57,7 @@ const gridCols: Record<number, string> = {
       )}
 
       {d.groups && (
-        <div class="grid gap-8 mt-8 text-left sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-8 mt-8 text-left sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
           {d.groups.map((g) => (
             <div>
               <h3 class="font-bold mb-3 pb-2 border-b border-current">{g.label}</h3>

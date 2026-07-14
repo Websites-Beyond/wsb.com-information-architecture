@@ -1,0 +1,28 @@
+---
+// Reusable featured proof block — reviews, testimonials, case studies.
+// "Trust Signals" = both the marketing term (proof elements) and a nod to the
+// radar/signal brand theme. Drop <TrustSignals /> onto any page.
+// A radar/beacon illustration is intended to live in/around this section later.
+import Section from './Section.astro';
+import Card from './Card.astro';
+import { url } from '../lib/url';
+---
+<Section heading="Trust Is Earned Through Results" centered={true}>
+  <p class="text-sm uppercase tracking-wide opacity-60 mb-6">Our Trust Signals</p>
+
+  <div class="grid gap-4 sm:grid-cols-3 text-left">
+    <Card title="Review — TODO">
+      <p class="opacity-70 text-sm">TODO — a real Google/verified review with rating + name.</p>
+    </Card>
+    <Card title="Testimonial — TODO">
+      <p class="opacity-70 text-sm">TODO — named client quote with company + trade.</p>
+    </Card>
+    <Card title="Case Study — TODO">
+      <p class="opacity-70 text-sm">TODO — hard result (revenue, leads, uptime) linking to the full study.</p>
+    </Card>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-4 mt-8">
+    <a href={url('/projects')} class="border border-current px-4 py-2">View Our Work</a>
+  </div>
+</Section>

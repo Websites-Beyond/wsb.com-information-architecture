@@ -1,8 +1,7 @@
 ---
-page: solutions-local-service-companies
-order: 3
-left: true
-heading: Tools We Work With
+page: solutions-local-service-providers
+order: 6
+heading: Integrated With Your Business
 groups:
   - label: CRM / FMS
     items:
@@ -27,3 +26,5 @@ groups:
       - ServiceTitan Scheduling Pro
       - GoHighLevel Forms & Chats
 ---
+
+TODO — intro line. We plug into the tools you already run, so nothing you rely on skips a beat.

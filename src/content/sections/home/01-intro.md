@@ -8,7 +8,7 @@ buttons:
   - label: Digital Agencies
     href: /solutions/digital-agencies
     style: primary
-  - label: Local Service Companies
-    href: /solutions/local-service-companies
+  - label: Local Service Providers
+    href: /solutions/local-service-providers
     style: secondary
 ---
