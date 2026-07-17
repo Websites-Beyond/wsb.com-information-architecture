@@ -13,14 +13,17 @@ Our mission is to elevate the businesses that keep our communities running. We b
 
 We believe that ambition is the heartbeat of progress — the drive that pushes teams to build something meaningful and leave a lasting impact. Web technology shouldn't be a hurdle in that pursuit, it should be the catalyst.
 
-> "You do not rise to the level of your goals. You fall to the level of your systems."  
-> — *James Clear, Atomic Habits*
+**We do the work.**
 
-<!-- TODO: 2-4 core convictions/values (client-facing, not process). e.g.
-     - Ambition deserves a catalyst, not a hurdle.
-     - Technology should serve people.
-     - Trust is earned, not demanded.
-     Shape these into the values that define our character. -->
+**We solve problems worth solving.**
+
+**We measure what matters.**
+
+**We teach what we learn.**
+
+**People come first.**
+
+Do all of that, consistently, and trust follows. It's the only way we know to earn it.
 
 ## Our Promise to You
 
