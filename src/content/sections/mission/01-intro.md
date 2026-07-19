@@ -2,33 +2,41 @@
 page: mission
 order: 1
 left: true
-heading: The Websites Beyond Mission
+heading: Our Mission
 ---
 
-## Why We Exist
+We power the local service providers that keep our communities running online. We build and manage the web foundations that connect our neighbors with the service professionals they need, when it matters most.
 
-Our mission is to elevate the businesses that keep our communities running. We build and manage scalable web foundations that empower digital marketers to connect our neighbors with trusted local service providers when it matters most.
+## What We Stand For
 
-## What We Believe
+We believe ambition is the heartbeat of progress — the drive that pushes teams to build something meaningful and leave a lasting impact. But ambition alone isn't enough. Sustainable progress requires thoughtful systems, disciplined execution, and people committed to doing the right thing.
 
-We believe that ambition is the heartbeat of progress — the drive that pushes teams to build something meaningful and leave a lasting impact. Web technology shouldn't be a hurdle in that pursuit, it should be the catalyst.
+Web technology shouldn't be a hurdle in that pursuit; it should be the catalyst.
 
-**We do the work.**
+**These are the principles that guide how we operate:**
 
-**We solve problems worth solving.**
+#### Care Deeply
 
-**We measure what matters.**
+Behind every project are real people, businesses, and communities. We consider their long-term interests and focus on outcomes that create lasting value.
 
-**We teach what we learn.**
+#### Think Critically
 
-**People come first.**
+We look beyond symptoms, challenge assumptions, and take ownership of solving the underlying problem.
 
-Do all of that, consistently, and trust follows. It's the only way we know to earn it.
+#### Execute Systematically
+
+We build repeatable ways of working that create clarity, protect quality, and make space for creativity and innovation.
+
+#### Evolve Continuously
+
+We challenge ourselves to keep learning, embrace feedback, and continually improve.
 
 ## Our Promise to You
 
-TODO
+Trust is built through transparency and consistency. We promise to do what we say, keep you informed at every step, and treat your digital assets as if they were our own. We will always communicate openly and admit when we make mistakes. Our goal is to build lasting relationships with partners who can depend on us to make a meaningful impact together.
 
----
+<!-- DESIGN: founder photo + handwritten signature graphic go here (signature asset in progress). -->
+
+— Chad, Founder
 
 *Just remember to buckle in.*
