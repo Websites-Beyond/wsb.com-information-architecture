@@ -8,4 +8,4 @@ buttons:
     style: secondary
 ---
 
-Our mission is to elevate the businesses that keep our communities running. We build and manage scalable web foundations that empower digital marketers to connect our neighbors with trusted local service providers when it matters most.
+Websites Beyond powers the local service providers that keep our communities running online. We build and manage the web foundations that connect our neighbors with service professionals when it matters most.

@@ -11,8 +11,23 @@
   color-scheme: light dark;
 }
 
+/* Placeholder typography so the wireframe reads clean and modern.
+   The designer will replace all of this. */
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+}
+
+/* Tighten headings a touch — the modern look is snug, not airy. */
+:where(h1, h2, h3, h4) {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
 /* Minimal structure for markdown-rendered prose (blockquotes, subheads,
-   lists, separators). Wireframe only — spacing and borders, no color. */
+   lists, separators). Wireframe only — the designer owns real typography. */
 .prose-wireframe :where(h2) {
   font-size: 1.5rem;
   font-weight: 700;

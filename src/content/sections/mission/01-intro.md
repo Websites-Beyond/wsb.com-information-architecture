@@ -5,7 +5,7 @@ left: true
 heading: Our Mission
 ---
 
-We power the local service providers that keep our communities running online. We build and manage the web foundations that connect our neighbors with the service professionals they need, when it matters most.
+Websites Beyond powers the local service providers that keep our communities running online. We build and manage the web foundations that connect our neighbors with service professionals when it matters most.
 
 ## What We Stand For
 

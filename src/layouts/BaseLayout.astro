@@ -15,6 +15,16 @@ const { title = 'Websites Beyond' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Wireframe preview: keep it out of search engines. -->
     <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Inter — a clean, neutral typeface so the wireframe reads modern.
+         Placeholder only; the designer will choose the real typography. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <title>{title}</title>
 
     <!-- Set theme before paint to avoid a flash of the wrong mode.
