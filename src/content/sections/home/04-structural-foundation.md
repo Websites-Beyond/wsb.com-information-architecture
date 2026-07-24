@@ -1,7 +1,7 @@
 ---
 page: home
 order: 4
-heading: The Structural Foundation Matters
+heading: The Technical Foundation Matters
 bullets:
   - Designed to Evolve
   - Engineered to Endure

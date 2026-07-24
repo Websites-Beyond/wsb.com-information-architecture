@@ -1,7 +1,7 @@
 ---
 page: solutions-local-service-providers
 order: 6
-heading: Integrated With Your Business
+heading: Integrated With The Industry
 groups:
   - label: CRM / FMS
     items:
